@@ -2,5 +2,7 @@ command_ip: 10.204.217.60
 ntpserver: 10.204.217.158
 vrouter_gateway:
 container_registry: bng-artifactory.juniper.net/contrail-nightly
+# Contrail command version
 container_tag: 2003.9
+# Cluster version
 contrail_container_tag: 2002.17
