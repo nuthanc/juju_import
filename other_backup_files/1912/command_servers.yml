@@ -1,0 +1,157 @@
+---
+command_servers:
+  server1:
+    ip: 10.204.217.60 
+    connection: ssh
+    ssh_user: root
+    ntpserver: 10.204.217.158
+
+    # Specify either container_path
+    container_registry: bng-artifactory.juniper.net/contrail-nightly
+    container_name: contrail-command
+    container_tag: 1912.37 
+    registry_insecure: true
+    config_dir: /etc/contrail
+
+    # Enable/Disable features
+    feature_list:
+      cluster_user:
+        xflow: false
+
+    # contrail command container configurations given here go to /etc/contrail/contrail.yml
+    contrail_config:
+      database:
+        host: localhost
+        user: root
+        password: contrail123
+        name: contrail_test
+        max_open_conn: 100
+        connection_retries: 10
+        retry_period: 3s
+        replication_status_timeout: 10s
+        debug: false
+
+      etcd:
+        endpoints:
+        - localhost:2379
+        username:
+        password:
+        path: contrail
+        grpc_insecure: false
+        tls:
+          enabled: false
+
+      log_level: debug
+
+      homepage:
+        enabled: false # disable in order not to collide with server.static_files
+
+      server:
+        enabled: true
+        read_timeout: 10
+        write_timeout: 5
+        log_api: true
+        log_body: false
+        address: ":9091"
+        enable_vnc_replication: true
+        enable_gzip: false
+        tls:
+          enabled: true
+          key_file: /usr/share/contrail/ssl/cs-key.pem
+          cert_file: /usr/share/contrail/ssl/cs-cert.pem
+        enable_grpc: false
+        enable_vnc_neutron: true
+        static_files:
+          /: /usr/share/contrail/public
+        dynamic_proxy_path: proxy
+        proxy:
+        notify_etcd: false
+
+      no_auth: false
+      insecure: true
+
+      keystone:
+        local: true
+        assignment:
+          type: static
+          data:
+            domains:
+              default: &default
+                id: default
+                name: default
+            projects:
+              admin: &admin
+                id: admin
+                name: admin
+                domain: *default
+              demo: &demo
+                id: demo
+                name: demo
+                domain: *default
+            users:
+              admin:
+                id: admin
+                name: Admin
+                domain: *default
+                password: contrail123
+                email: admin@juniper.nets
+                roles:
+                - id: admin
+                  name: admin
+                  project: *admin
+              bob:
+                id: bob
+                name: Bob
+                domain: *default
+                password: bob_password
+                email: bob@juniper.net
+                roles:
+                - id: Member
+                  name: Member
+                  project: *demo
+        store:
+          type: memory
+          expire: 36000
+        insecure: true
+        authurl: https://10.204.217.60:9091/keystone/v3
+
+      sync:
+        enabled: false
+
+      client:
+        id: admin
+        password: contrail123
+        project_name: admin
+        domain_id: default
+        schema_root: /
+        endpoint: https://localhost:9091
+
+      compilation:
+        enabled: false
+
+      cache:
+        enabled: true
+        timeout: 10s
+        max_history: 100000
+        rdbms:
+          enabled: true
+
+      replication:
+        cassandra:
+          enabled: false
+        amqp:
+          enabled: false
+
+      agent:
+        enabled: true
+        backend: file
+        watcher: polling
+        log_level: debug
+
+      # The following are optional parameters used to patch/cherrypick
+      # revisions into the contrail-ansible-deployer sandbox. These configs
+      # go into the /etc/contrail/contrail-deploy-config.tmpl file
+#        cluster_config:
+#            ansible_fetch_url: "https://review.opencontrail.org/Juniper/contrail-ansible-deployer refs/changes/80/40780/20"
+#            ansible_cherry_pick_revision: FETCH_HEAD
+#            ansible_revision: GIT_COMMIT_HASH

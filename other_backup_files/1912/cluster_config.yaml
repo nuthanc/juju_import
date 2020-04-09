@@ -1,0 +1,6 @@
+command_ip: 10.204.217.60
+ntpserver: 10.204.217.158
+vrouter_gateway:
+container_registry: bng-artifactory.juniper.net/contrail-nightly
+container_tag: 1912.37
+contrail_container_tag: 2002.17

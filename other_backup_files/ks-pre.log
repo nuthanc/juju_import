@@ -1,0 +1,35 @@
+
+# Once root's homedir is there, copy over the log.
+while : ; do
+    sleep 10
+    if [ -d /mnt/sysimage/root ]; then
+        cp /tmp/ks-pre.log /mnt/sysimage/root/
+        logger "Copied %pre section log to system"
+        break
+    fi
+done &
+
+
+wget "http://10.204.217.158/cblr/svc/op/trig/mode/pre/system/nodeg20" -O /dev/null
++ wget http://10.204.217.158/cblr/svc/op/trig/mode/pre/system/nodeg20 -O /dev/null
++ :
++ sleep 10
+--2020-01-31 07:16:34--  http://10.204.217.158/cblr/svc/op/trig/mode/pre/system/nodeg20
+Connecting to 10.204.217.158:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 4 [text/plain]
+Saving to: '/dev/null'
+
+     0K                                                       100%  502K=0s
+
+2020-01-31 07:16:35 (502 KB/s) - '/dev/null' saved [4/4]
+
+# Enable installation monitoring         
++ '[' -d /mnt/sysimage/root ']'
++ :
++ sleep 10
++ '[' -d /mnt/sysimage/root ']'
++ :
++ sleep 10
++ '[' -d /mnt/sysimage/root ']'
++ cp /tmp/ks-pre.log /mnt/sysimage/root/
