@@ -1,0 +1,13 @@
+contrail-command/2*        error     idle   5        10.204.217.60                hook failed: "install"
+
+2020-04-09 17:19:36 DEBUG install Traceback (most recent call last):
+2020-04-09 17:19:36 DEBUG install   File "/var/lib/juju/agents/unit-contrail-command-2/charm/hooks/install.real", line 14, in <module>
+2020-04-09 17:19:36 DEBUG install     import contrail_command_utils as utils
+2020-04-09 17:19:36 DEBUG install   File "/var/lib/juju/agents/unit-contrail-command-2/charm/hooks/contrail_command_utils.py", line 5, in <module>
+2020-04-09 17:19:36 DEBUG install     from distutils.dir_util import copy_tree
+2020-04-09 17:19:36 DEBUG install ModuleNotFoundError: No module named 'distutils.dir_util'
+2020-04-09 17:19:36 ERROR juju.worker.uniter.operation runhook.go:132 hook "install" failed: exit status 1
+2020-04-09 17:19:36 DEBUG juju.machinelock machinelock.go:186 machine lock released for uniter (run install hook)
+2020-04-09 17:19:36 DEBUG juju.worker.uniter.operation executor.go:74 lock released
+2020-04-09 17:19:36 INFO juju.worker.uniter resolver.go:126 awaiting error resolution for "install" hook
+2020-04-09 17:19:36 DEBUG juju.worker.uniter agent.go:20 [AGENT-STATUS] error: hook failed: "install"
