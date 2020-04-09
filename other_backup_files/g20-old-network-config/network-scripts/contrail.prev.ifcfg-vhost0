@@ -1,0 +1,6 @@
+BOOTPROTO=dhcp
+DEVICE=vhost0
+ONBOOT=yes
+TYPE=kernel
+NM_CONTROLLED=no
+BIND_INT=enp1s0f0
