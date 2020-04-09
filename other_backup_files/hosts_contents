@@ -1,0 +1,5 @@
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+192.168.30.156 juju-2d7ed5-0-lxd-0.localdomain juju-2d7ed5-0-lxd-0
+10.204.217.158 puppet
+10.204.217.60  nodeg20.englab.juniper.net nodeg20
