@@ -8,10 +8,10 @@ cat cert.pem | base64 > "cert.pem.b64"
 # Need to create config file
 cat config.yaml 
 
-juju run-action contrail-command/1 import-cluster --params config.yaml
-# Action queued with id: "3"
+juju run-action contrail-command/0 import-cluster --params config.yaml
+# Action queued with id: "1"
 
-juju show-action-status 3
+juju show-action-status 1
 juju status
 juju show-action-output 1 | grep result
 
