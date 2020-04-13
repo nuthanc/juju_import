@@ -1,5 +1,5 @@
 # Ip of juju-controller (juju tag machine in maas), i.e 192.168.30.60
-juju-controller: 192.168.30.18
+juju-controller: 192.168.30.60
 juju-ca-cert: |
     LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUVyVENDQXhXZ0F3SUJBZ0lWQUsyeG9MN0t4
     Y1lITnVydTRCanBMNmsrYmdQME1BMEdDU3FHU0liM0RRRUIKQ3dVQU1HNHhEVEFMQmdOVkJBb1RC
