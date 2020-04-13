@@ -1,3 +1,4 @@
+# Ip of juju-controller (juju tag machine in maas), i.e 192.168.30.60
 juju-controller: 192.168.30.18
 juju-ca-cert: |
     LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUVyVENDQXhXZ0F3SUJBZ0lWQUsyeG9MN0t4
@@ -30,5 +31,5 @@ juju-ca-cert: |
     cUlOQnhuNVFPYURQVXhIRkdaTzB6d1NkT21mZjEyZ1JDNzE4d3lYbGVrcFFlODNXCjZTbmNWWmpa
     OFc3YzRYQzlERDUvVlVKYmhWZzZtM0JFU1lqck45UU1OQzMvU3FDMWR0eE5OQjhvZmdscE4rcWYK
     S2c9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0t
-juju-model-id: 31a9a833-65dd-4b34-8b05-ae7c836863f3
+juju-model-id: 1bd09f4b-dca1-4ba1-815a-507e8cb91507
 juju-controller-password: c0ntrail123
