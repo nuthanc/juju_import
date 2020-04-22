@@ -24,9 +24,5 @@ else:
     juju_config['juju-model-id'] = controller['myjujucontroller']['models']['default']['model-uuid']
     juju_config['juju-controller-password'] = 'c0ntrail123'
 
-  print(juju_config)
-  print(cert)
-  print(juju_config['juju-ca-cert'])
-
   with open('/root/juju_import/cc-charm-2005-auto/auto_config.yml', 'w') as file:
     documents = yaml.dump(juju_config, file)
