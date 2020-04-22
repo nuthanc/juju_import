@@ -34,10 +34,11 @@ def prepare_config_file():
 
 
 def deploy():
-  os.system('juju deploy ./tf-charms/contrail-command --constraints "tags=g20" --config docker-registry='bng-artifactory.juniper.net/contrail-nightly' --config image-tag=master.1167 --config docker-registry-insecure=true')
+  os.system('juju deploy /root/tf-charms/contrail-command --constraints "tags=g20" --config docker-registry="bng-artifactory.juniper.net/contrail-nightly" --config image-tag=master.1167 --config docker-registry-insecure=true')
+  # subprocess.run(['juju', 'deploy', '/root/tf-charms/contrail-command', '--constraints', 'tags=g20', '--config', 'docker-registry=bng-artifactory.juniper.net/contrail-nightly', '--config', 'image-tag=master.1167', '--config', 'docker-registry-insecure=true'])
   time.sleep(2)
   os.system("juju add-relation contrail-command contrail-controller")
-  time.sleep(2)
+  time.sleep(900)
   os.system("juju run-action contrail-command/0 import-cluster --params config.yaml")
   os.system("juju show-action-status 1")
 
