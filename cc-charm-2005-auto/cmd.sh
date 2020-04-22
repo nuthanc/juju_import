@@ -1,5 +1,5 @@
 # juju deploy ./tf-charms/contrail-command --to 3 --config docker-registry='bng-artifactory.juniper.net/contrail-nightly' --config image-tag=master.1159
-juju deploy ./tf-charms/contrail-command --constraints "tags=g20" --config docker-registry='bng-artifactory.juniper.net/contrail-nightly' --config image-tag=master.1167 --config docker-registry-insecure=true
+juju deploy ./tf-charms/contrail-command --constraints "tags=g20" --config docker-registry="bng-artifactory.juniper.net/contrail-nightly" --config image-tag=master.1167 --config docker-registry-insecure=true
 juju add-relation contrail-command contrail-controller
 juju change-user-password
 juju show-controller
