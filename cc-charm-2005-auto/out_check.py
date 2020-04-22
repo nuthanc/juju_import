@@ -1,9 +1,10 @@
-import subprocess
 import os
+import yaml
 
-# redirect_output = subprocess.run(["juju", "show-controller"])
-# print(redirect_output)
+with open('/root/juju_import/cc-charm-2005-auto/controller.yml') as file:
+    controller = yaml.load(file, Loader=yaml.FullLoader)
+    cert = controller['myjujucontroller']['details']['ca-cert']
+    with open('cert.pem','w') as file:
+      file.write(cert)
 
-# with open('ctrl.yml', 'w') as f:
-#   f.write(redirect_output)
-os.system("juju show-controller > ctrl.yml")
+os.system("cat cert.pem | base64 > 'cert.pem.b64'")
