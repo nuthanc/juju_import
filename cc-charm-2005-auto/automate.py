@@ -17,9 +17,9 @@ def change_user_password():
 
 
 def prepare_config_file():
-  os.system("juju show-controller > /root/juju_import/deploy_unit-charm-2005-auto/controller.yml")
+  os.system("juju show-controller > /root/juju_import/cc-charm-2005-auto/controller.yml")
 
-  with open('/root/juju_import/deploy_unit-charm-2005-auto/controller.yml') as file:
+  with open('/root/juju_import/cc-charm-2005-auto/controller.yml') as file:
     controller = yaml.load(file, Loader=yaml.FullLoader)
     juju_config = {}
     cert = controller['myjujucontroller']['details']['ca-cert']
@@ -30,7 +30,7 @@ def prepare_config_file():
     juju_config['juju-model-id'] = controller['myjujucontroller']['models']['default']['model-uuid']
     juju_config['juju-controller-password'] = 'c0ntrail123'
 
-    with open('/root/juju_import/deploy_unit-charm-2005-auto/config.yaml', 'w') as file:
+    with open('/root/juju_import/cc-charm-2005-auto/config.yaml', 'w') as file:
       documents = yaml.dump(juju_config, file)
 
 
