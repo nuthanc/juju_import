@@ -69,18 +69,16 @@ def deploy(charm_path='/root/tf-charms/contrail-command'):
   print(juju_deploy.stdout)
   
   deploy_unit_num = juju_deploy.stdout.split("-")[2].split("\"")[0]
+  deploy_unit = "contrail-command/" + deploy_unit_num
 
   wait_till_machine_is_deployed()
   add_relation_to_contrail_controller()
-  
+
   print("deploy_unit value and type", deploy_unit_num, type(deploy_unit_num))
-  deploy_unit = "contrail-command/" + deploy_unit_num
   print("Complete action unit", deploy_unit)
 
   id = run_action_config(deploy_unit)
   action_status(id)
-  
-  
 
 
 if __name__ == '__main__':
