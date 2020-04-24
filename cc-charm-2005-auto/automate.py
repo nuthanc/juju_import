@@ -17,9 +17,9 @@ def change_user_password():
 
 
 def prepare_config_file():
-  os.system("juju show-controller > /root/juju_import/cc-charm-2005-auto/controller.yml")
+  os.system("juju show-controller > /root/juju_import/deploy_unit-charm-2005-auto/controller.yml")
 
-  with open('/root/juju_import/cc-charm-2005-auto/controller.yml') as file:
+  with open('/root/juju_import/deploy_unit-charm-2005-auto/controller.yml') as file:
     controller = yaml.load(file, Loader=yaml.FullLoader)
     juju_config = {}
     cert = controller['myjujucontroller']['details']['ca-cert']
@@ -30,32 +30,56 @@ def prepare_config_file():
     juju_config['juju-model-id'] = controller['myjujucontroller']['models']['default']['model-uuid']
     juju_config['juju-controller-password'] = 'c0ntrail123'
 
-    with open('/root/juju_import/cc-charm-2005-auto/config.yaml', 'w') as file:
+    with open('/root/juju_import/deploy_unit-charm-2005-auto/config.yaml', 'w') as file:
       documents = yaml.dump(juju_config, file)
 
 
-def deploy(charm_path='/root/tf-charms/contrail-command'):
-  deploy_output = subprocess.run(['juju', 'deploy', charm_path, '--constraints', 'tags=g20', '--config', 'docker-registry=bng-artifactory.juniper.net/contrail-nightly', '--config', 'image-tag=master.1186', '--config', 'docker-registry-insecure=true'], stdout=subprocess.PIPE,stderr=subprocess.STDOUT, universal_newlines=True)
-  
-  cc = deploy_output.stdout.split("-")[2].split("\"")[0]
-
+def wait_till_machine_is_deployed():
   juju_status = subprocess.run(['juju', 'status'], stdout=subprocess.PIPE, universal_newlines=True)
-
+  time.sleep(180)
   while('Missing cloud orchestrator' not in juju_status.stdout):
     juju_status = subprocess.run(['juju', 'status'], stdout=subprocess.PIPE, universal_newlines=True)
     print(juju_status.stdout)
     time.sleep(10)
 
+
+def add_relation_to_contrail_controller():
   subprocess.run(['juju', 'add-relation', 'contrail-command', 'contrail-controller'])
 
-  cc = "contrail-command/" + cc
-  out = subprocess.run(['juju', 'run-action', cc, 'import-cluster', '--params', 'config.yaml'], stdout=subprocess.PIPE, universal_newlines=True)
+
+def run_action_config(deploy_unit):
+  out = subprocess.run(['juju', 'run-action', deploy_unit, 'import-cluster', '--params', 'config.yaml'], stdout=subprocess.PIPE, universal_newlines=True)
+  print(out.stdout)
   id = out.stdout.split(":")[1].strip()
+  print("id",id)
+  return id
+
+
+def action_status(id):
   subprocess.run(['juju', 'show-action-status', id])
   result = subprocess.run(['juju', 'show-action-status', id], stdout=subprocess.PIPE, universal_newlines=True)
+  print(result.stdout)
   while('Success' not in result.stdout):
     result = subprocess.run(['juju', 'show-action-status', id], stdout=subprocess.PIPE, universal_newlines=True)
     print(result.stdout[-15:])
+
+
+def deploy(charm_path='/root/tf-charms/contrail-command'):
+  juju_deploy = subprocess.run(['juju', 'deploy', charm_path, '--constraints', 'tags=g20', '--config', 'docker-registry=bng-artifactory.juniper.net/contrail-nightly', '--config', 'image-tag=2005.1', '--config', 'docker-registry-insecure=true'], stdout=subprocess.PIPE,stderr=subprocess.STDOUT, universal_newlines=True)
+  print(juju_deploy.stdout)
+  
+  deploy_unit_num = juju_deploy.stdout.split("-")[2].split("\"")[0]
+
+  wait_till_machine_is_deployed()
+  add_relation_to_contrail_controller()
+  
+  print("deploy_unit value and type", deploy_unit_num, type(deploy_unit_num))
+  deploy_unit = "contrail-command/" + deploy_unit_num
+  print("Complete action unit", deploy_unit)
+
+  id = run_action_config(deploy_unit)
+  action_status(id)
+  
   
 
 
@@ -63,5 +87,3 @@ if __name__ == '__main__':
   change_user_password()
   prepare_config_file()
   deploy()
-
-  
