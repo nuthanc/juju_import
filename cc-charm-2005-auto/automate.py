@@ -50,18 +50,26 @@ def add_relation_to_contrail_controller():
 def run_action_config(deploy_unit):
   out = subprocess.run(['juju', 'run-action', deploy_unit, 'import-cluster', '--params', 'config.yaml'], stdout=subprocess.PIPE, universal_newlines=True)
   print(out.stdout)
-  id = out.stdout.split(":")[1].strip()
+  id = out.stdout.split(":")[1].strip().split("\"")[1]
   print("id",id)
   return id
 
 
-def action_status(id):
+def action_status_and_result(id):
   subprocess.run(['juju', 'show-action-status', id])
-  result = subprocess.run(['juju', 'show-action-status', id], stdout=subprocess.PIPE, universal_newlines=True)
-  print(result.stdout)
-  while('Success' not in result.stdout):
-    result = subprocess.run(['juju', 'show-action-status', id], stdout=subprocess.PIPE, universal_newlines=True)
-    print(result.stdout[-15:])
+  action_status = subprocess.run(['juju', 'show-action-status', id], stdout=subprocess.PIPE, universal_newlines=True)
+  print(action_status.stdout)
+  while 'completed' not in action_status.stdout:
+    action_status = subprocess.run(['juju', 'show-action-status', id], stdout=subprocess.PIPE, universal_newlines=True)
+    print(action_status.stdout)
+    time.sleep(10)
+    
+  action_result = subprocess.run(['juju', 'show-action-output', id], stdout=subprocess.PIPE, universal_newlines=True)
+  print(action_result.stdout)
+  while 'Success' not in action_result.stdout:
+    action_result = subprocess.run(['juju', 'show-action-output', id], stdout=subprocess.PIPE, universal_newlines=True)
+    print(action_result.stdout[-250:])
+    time.sleep(10)
 
 
 def deploy(charm_path='/root/tf-charms/contrail-command'):
@@ -78,7 +86,8 @@ def deploy(charm_path='/root/tf-charms/contrail-command'):
   print("Complete action unit", deploy_unit)
 
   id = run_action_config(deploy_unit)
-  action_status(id)
+  action_status_and_result(id)
+
 
 
 if __name__ == '__main__':
