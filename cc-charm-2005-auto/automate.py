@@ -36,7 +36,8 @@ def prepare_config_file():
 
 def wait_till_machine_is_deployed():
   juju_status = subprocess.run(['juju', 'status'], stdout=subprocess.PIPE, universal_newlines=True)
-  time.sleep(180)
+  print("Sleep for 300s while waiting for machine to get deployed")
+  time.sleep(300)
   while('Missing cloud orchestrator' not in juju_status.stdout):
     juju_status = subprocess.run(['juju', 'status'], stdout=subprocess.PIPE, universal_newlines=True)
     print(juju_status.stdout)
@@ -59,7 +60,7 @@ def action_status_and_result(id):
   subprocess.run(['juju', 'show-action-status', id])
   action_status = subprocess.run(['juju', 'show-action-status', id], stdout=subprocess.PIPE, universal_newlines=True)
   print(action_status.stdout)
-  while 'completed' not in action_status.stdout:
+  while 'status: completed' not in action_status.stdout:
     action_status = subprocess.run(['juju', 'show-action-status', id], stdout=subprocess.PIPE, universal_newlines=True)
     print(action_status.stdout)
     time.sleep(10)
@@ -72,18 +73,26 @@ def action_status_and_result(id):
     time.sleep(10)
 
 
+def parse_deploy_unit():
+  deploy_unit_output = subprocess.check_output('juju status|grep "contrail-command/"', shell=True, universal_newlines=True)
+  if "*" in deploy_unit_output:
+    deploy_unit = deploy_unit_output.split("*")[0].strip()
+  else:
+    deploy_unit = deploy_unit_output.split()[0].strip()
+  return deploy_unit
+
+
 def deploy(charm_path='/root/tf-charms/contrail-command', image_tag='2005.1'):
   image_tag_config = f"image-tag={image_tag}"
   juju_deploy = subprocess.run(['juju', 'deploy', charm_path, '--constraints', 'tags=g20', '--config', 'docker-registry=bng-artifactory.juniper.net/contrail-nightly', '--config', image_tag_config, '--config', 'docker-registry-insecure=true'], stdout=subprocess.PIPE,stderr=subprocess.STDOUT, universal_newlines=True)
   print(juju_deploy.stdout)
   
-  deploy_unit = subprocess.check_output('juju status|grep "contrail-command/"', shell=True, universal_newlines=True).split("*")[0]
-
   wait_till_machine_is_deployed()
   add_relation_to_contrail_controller()
-
-  print("Complete action unit", deploy_unit)
-
+  prepare_config_file()
+  print("Sleeping for 90s for the Unit to get Ready")
+  time.sleep(90)
+  deploy_unit = parse_deploy_unit()
   id = run_action_config(deploy_unit)
   action_status_and_result(id)
 
@@ -91,5 +100,9 @@ def deploy(charm_path='/root/tf-charms/contrail-command', image_tag='2005.1'):
 
 if __name__ == '__main__':
   change_user_password()
-  prepare_config_file()
-  deploy(image_tag='2005.1')
+  deploy(image_tag='2005.4')
+  # The below 3 for debugging
+  # deploy_unit = parse_deploy_unit()
+  # id = run_action_config(deploy_unit)
+  # action_status_and_result(id)
+

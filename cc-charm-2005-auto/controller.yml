@@ -51,8 +51,8 @@ myjujucontroller:
     default:
       uuid: f2c764b7-8a2d-43ad-8ee8-ab4057bd0780
       model-uuid: f2c764b7-8a2d-43ad-8ee8-ab4057bd0780
-      machine-count: 10
-      core-count: 84
+      machine-count: 11
+      core-count: 88
   current-model: admin/default
   account:
     user: admin
