@@ -77,13 +77,11 @@ def deploy(charm_path='/root/tf-charms/contrail-command', image_tag='2005.1'):
   juju_deploy = subprocess.run(['juju', 'deploy', charm_path, '--constraints', 'tags=g20', '--config', 'docker-registry=bng-artifactory.juniper.net/contrail-nightly', '--config', image_tag_config, '--config', 'docker-registry-insecure=true'], stdout=subprocess.PIPE,stderr=subprocess.STDOUT, universal_newlines=True)
   print(juju_deploy.stdout)
   
-  deploy_unit_num = int(juju_deploy.stdout.split("-")[2].split("\"")[0]) - 1
-  deploy_unit = "contrail-command/" + str(deploy_unit_num)
+  deploy_unit = subprocess.check_output('juju status|grep "contrail-command/"', shell=True, universal_newlines=True).split("*")[0]
 
   wait_till_machine_is_deployed()
   add_relation_to_contrail_controller()
 
-  print("deploy_unit value and type", deploy_unit_num, type(deploy_unit_num))
   print("Complete action unit", deploy_unit)
 
   id = run_action_config(deploy_unit)

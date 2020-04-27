@@ -49,8 +49,8 @@ myjujucontroller:
       machine-count: 1
       core-count: 4
     default:
-      uuid: 29598a7a-d44f-4d48-8f3e-2436b9735788
-      model-uuid: 29598a7a-d44f-4d48-8f3e-2436b9735788
+      uuid: f2c764b7-8a2d-43ad-8ee8-ab4057bd0780
+      model-uuid: f2c764b7-8a2d-43ad-8ee8-ab4057bd0780
       machine-count: 10
       core-count: 84
   current-model: admin/default
