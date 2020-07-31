@@ -1,58 +1,54 @@
 myjujucontroller:
   details:
-    uuid: a5517228-bd8e-4016-85d5-0bf886dd279a
-    controller-uuid: a5517228-bd8e-4016-85d5-0bf886dd279a
-    api-endpoints: ['192.168.30.60:17070']
+    uuid: ce8072b8-ed33-4c83-8f5e-9828cb70fab2
+    controller-uuid: ce8072b8-ed33-4c83-8f5e-9828cb70fab2
+    api-endpoints: ['192.168.30.95:17070']
     cloud: mymaas
     region: default
-    agent-version: 2.7.5
-    agent-git-commit: 3a6aa80a6e26bf3b05dd19206d2a4dae7935332e
-    controller-model-version: 2.7.5
+    agent-version: 2.8.1
+    agent-git-commit: 16439b3d1c528b7a0e019a16c2122ccfcf6aa41f
+    controller-model-version: 2.8.1
     mongo-version: 3.6.3
-    ca-fingerprint: 69:D8:0D:6F:5B:83:FD:C9:48:14:81:CE:A7:BA:D9:87:49:34:01:5C:7D:B1:FC:85:6D:2D:41:52:4C:07:A6:D4
+    ca-fingerprint: 73:1E:E5:96:C5:59:B2:08:A4:AC:53:2E:2A:C6:B3:CA:43:61:6E:45:ED:66:D0:82:0E:BA:3B:D6:A9:86:8B:E8
     ca-cert: |
       -----BEGIN CERTIFICATE-----
-      MIIErTCCAxWgAwIBAgIVAK2xoL7KxcYHNuru4BjpL6k+bgP0MA0GCSqGSIb3DQEB
-      CwUAMG4xDTALBgNVBAoTBGp1anUxLjAsBgNVBAMMJWp1anUtZ2VuZXJhdGVkIENB
-      IGZvciBtb2RlbCAianVqdS1jYSIxLTArBgNVBAUTJDhiYjJmZDhhLWJlMTYtNGJj
-      MC04ZDIwLWRhNDM5NzgxOTc3YTAeFw0yMDAzMjYxNDQ0MTNaFw0zMDA0MDIxNDQ0
-      MTJaMG4xDTALBgNVBAoTBGp1anUxLjAsBgNVBAMMJWp1anUtZ2VuZXJhdGVkIENB
-      IGZvciBtb2RlbCAianVqdS1jYSIxLTArBgNVBAUTJDhiYjJmZDhhLWJlMTYtNGJj
-      MC04ZDIwLWRhNDM5NzgxOTc3YTCCAaIwDQYJKoZIhvcNAQEBBQADggGPADCCAYoC
-      ggGBAMyHGHzDfIWYVl5/1Ar5Ak2rxHwg16z0g6xArFnPLGEN25k+URTZ1OW9xU1p
-      jONokH261oAlRRhJmAXl+tgYmQWarJRrDXTwPfzzl9NENsmDjPZQ2SKhRFCy2glC
-      8MNz3iF/1iYt7lSUnJOD5ytxSurxxcUO2UETOsxO/DUcPvQVp8AW3WS0Lf88/mYm
-      WOtXjMmXpd4TrQl8frwxFJtY4Sswvz4okjiSB/t8hyE0k6eKScybD5FgjBS3dc8n
-      /n1F5iL0glfStmpgRecy9lx0bxOVdRuG6OMcGhmHhx533wMGAg3S13kCMW10Ejpo
-      fHpQuvwj7t0NIZHpm3uWez6TSzdRM6oHmbTzS7i8g7/vM1F0f8+1fMttCY/hcUuF
-      CNwA+d+QjaY690ckBOLuEZ6aJg3ZDnAlTLkF3Y23EPvYJ965Zh3s7OnNgYBp9t5h
-      6qALZGc5YHa9sxwTJ6ALde7RL2954ZJ4TF8RgWtZGA60CRs2VerHU7D1PQ1+ItIW
-      beQOIwIDAQABo0IwQDAOBgNVHQ8BAf8EBAMCAqQwDwYDVR0TAQH/BAUwAwEB/zAd
-      BgNVHQ4EFgQUYwsDX5dSgx2XikxbLlaZcvRNrFgwDQYJKoZIhvcNAQELBQADggGB
-      AHYPry0UFDU95Vq+LRz+/HTNc89/GAMLYX0xGoBI1Rq7ae8VeU/4fx1tqXWtzPu9
-      /sfprwTQWCjsh9/SKGxWJdtI+HhAa04GzRaMqc/sN5suvj52AJPSoG9MR+8OAXGS
-      Hgb84CM/UfoKZXortyVR3xvNmh5UNVsBwZMThjFmsF6iEoZuw+OArY9rj5qyj5iW
-      Meg/GnI6+QIbxHwH020zGlV8g/jH1GPQHtwkAennNDTq+gHOlNmCe/gZeffhF+du
-      TtwQRUWyrfpu4nbjj/Omuss0tagjXFltbJuZ/X/9gLXCybvcDpdQnaQSMaKkjAC/
-      6gVWSOXtTuL/ZDZhe7z4dre/e9v9R+yEwTXiJEudsz/TsWfCxGOLqPyvKfASfGO/
-      XnPYfHwrhEWOQaYFqINBxn5QOaDPUxHFGZO0zwSdOmff12gRC718wyXlekpQe83W
-      6SncVZjZ8W7c4XC9DD5/VUJbhVg6m3BESYjrN9QMNC3/SqC1dtxNNB8ofglpN+qf
-      Kg==
+      MIID9DCCAlygAwIBAgIVAMQQKo8xqDUPX+SnT+Jn2Vp3DRQlMA0GCSqGSIb3DQEB
+      CwUAMCExDTALBgNVBAoTBEp1anUxEDAOBgNVBAMTB2p1anUtY2EwHhcNMjAwNzE2
+      MTExMTMxWhcNMzAwNzE2MTExNjMxWjAhMQ0wCwYDVQQKEwRKdWp1MRAwDgYDVQQD
+      EwdqdWp1LWNhMIIBojANBgkqhkiG9w0BAQEFAAOCAY8AMIIBigKCAYEA0FWgDZpJ
+      bDKderYOnOnipYNO2lw/Kh24vf0OZD8TjF15zWkZ+9lq/b1zmO9pnuKygQP0NXyj
+      QaxMq4vjaFNxwUpyFma1tBJ0gC7ivgG/JKLnSS0mnR7xGANCM8eVHfVNJm/D7Avw
+      zkNk1VkyKRmN05AfWoVwh1qDBIlm72HxP8Qk8hO8WmQqZyvDyg98txLO/ZtbHqcO
+      OwYTkXObRGJp6aCErAPbOL0isBbGKtusFraeGT+2u+Quc96oDitFu0WwXcQhzDF2
+      0e9UHQWehbSMiJVxwOBUAAyHTlBljFhD7dI8BeINVSsQ4Zumb+N5vWZ8fyz7DNqh
+      Xi/PUTVQ/wCYG+Z9WO0Bfe6KhGTcGSK8cyx9xyIQoCxZ1pzr/rxa/O1hl/pqdZH9
+      JO+9Ww/bsUHvRvPvnw2TBTyo+S6191V9mOFgX7gjN48ZT77HPRh67YP7AQwvJ5uL
+      hJv51d7sHPrG06JAJzvjdoI4s98YBwCx9Y6apSMhXQ+BjbKbMkJ9u8hXAgMBAAGj
+      IzAhMA4GA1UdDwEB/wQEAwICpDAPBgNVHRMBAf8EBTADAQH/MA0GCSqGSIb3DQEB
+      CwUAA4IBgQBEfwo0xgY5iRlvCgXOSLGU/Fyk6u0lzIiW3iwBOUI+TRNNI6hOlv9y
+      A/RMdje94Ild+jLtpvT5lnbxielvkCCVImbFuP8Eb+lSADZO/r/zxbMvbghOBTx+
+      FeI35iXw3Ov2Z85Ht5zBUDTUZvkuVVPMggTwlWOrILwZKDs+BrjVfHIJ/JJkVz2F
+      IylRW0JNBYAd7TwCj2569qIsArWItGxvJpbtmx6JdfWif+KJtiYj0kzxtrJbQ50i
+      VTz4PZq3hJWgyFD6qdZ5KhXEgmTQZCG3OBupFrnOqxIKUntkuIjg5bOqFfy+Oi2R
+      sQ/3P7K67nr3DSchyHtKJzHG6I9IpduHkwDUC+fItP/z4mRCYh0vVyND+WTUkXU/
+      wcowVMT2pBCNxcP470V0S6UdvHbkyVjc2M6Ciws2QUeWAQoP7aDVv2zyU5g9aCw2
+      9/Su5zPu4S3dKsIo9NLIFNY7vb/oJtxWz+xjgdn9GW92vOqphuAUDeP4VHGJ2oS4
+      BcQV1ZeJaKo=
       -----END CERTIFICATE-----
   controller-machines:
     "0":
-      instance-id: 6qa8h4
+      instance-id: khryxr
   models:
     controller:
-      uuid: a843faed-a1d4-4d2a-83d2-932ad61f6a74
-      model-uuid: a843faed-a1d4-4d2a-83d2-932ad61f6a74
+      uuid: 6d0d0634-7bd1-4e8b-816c-a7df62e016de
+      model-uuid: 6d0d0634-7bd1-4e8b-816c-a7df62e016de
       machine-count: 1
       core-count: 4
     default:
-      uuid: f2c764b7-8a2d-43ad-8ee8-ab4057bd0780
-      model-uuid: f2c764b7-8a2d-43ad-8ee8-ab4057bd0780
-      machine-count: 11
-      core-count: 88
+      uuid: 0182a655-1e83-4f87-8332-e0b82afebd23
+      model-uuid: 0182a655-1e83-4f87-8332-e0b82afebd23
+      machine-count: 13
+      core-count: 160
   current-model: admin/default
   account:
     user: admin

@@ -84,7 +84,7 @@ def parse_deploy_unit():
 
 def deploy(charm_path='/root/tf-charms/contrail-command', image_tag='2005.1'):
   image_tag_config = f"image-tag={image_tag}"
-  juju_deploy = subprocess.run(['juju', 'deploy', charm_path, '--constraints', 'tags=g20', '--config', 'docker-registry=bng-artifactory.juniper.net/contrail-nightly', '--config', image_tag_config, '--config', 'docker-registry-insecure=true'], stdout=subprocess.PIPE,stderr=subprocess.STDOUT, universal_newlines=True)
+  juju_deploy = subprocess.run(['juju', 'deploy', charm_path, '--constraints', 'tags=contrail-command', '--config', 'docker-registry=bng-artifactory.juniper.net/contrail-nightly', '--config', image_tag_config, '--config', 'docker-registry-insecure=true'], stdout=subprocess.PIPE,stderr=subprocess.STDOUT, universal_newlines=True)
   print(juju_deploy.stdout)
   
   wait_till_machine_is_deployed()
@@ -100,7 +100,7 @@ def deploy(charm_path='/root/tf-charms/contrail-command', image_tag='2005.1'):
 
 if __name__ == '__main__':
   change_user_password()
-  deploy(image_tag='2005.4')
+  deploy(image_tag='2008.29')
   # The below 3 for debugging
   # deploy_unit = parse_deploy_unit()
   # id = run_action_config(deploy_unit)
