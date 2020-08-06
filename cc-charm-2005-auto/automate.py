@@ -12,6 +12,7 @@ def change_user_password():
     change_command.sendline('c0ntrail123')
     change_command.expect('type new password again: ', timeout=5)
     change_command.sendline('c0ntrail123')
+    print("Password changed")
   except Exception as e:
     print(str(e))
 
@@ -63,6 +64,7 @@ def action_status_and_result(id):
   while 'status: completed' not in action_status.stdout:
     action_status = subprocess.run(['juju', 'show-action-status', id], stdout=subprocess.PIPE, universal_newlines=True)
     print(action_status.stdout)
+    print("id",id)
     time.sleep(10)
     
   action_result = subprocess.run(['juju', 'show-action-output', id], stdout=subprocess.PIPE, universal_newlines=True)
@@ -70,6 +72,7 @@ def action_status_and_result(id):
   while 'Success' not in action_result.stdout:
     action_result = subprocess.run(['juju', 'show-action-output', id], stdout=subprocess.PIPE, universal_newlines=True)
     print(action_result.stdout[-250:])
+    print("id",id)
     time.sleep(10)
 
 
@@ -100,7 +103,7 @@ def deploy(charm_path='/root/tf-charms/contrail-command', image_tag='2005.1'):
 
 if __name__ == '__main__':
   change_user_password()
-  deploy(image_tag='2008.29')
+  deploy(image_tag='2008.39')
   # The below 3 for debugging
   # deploy_unit = parse_deploy_unit()
   # id = run_action_config(deploy_unit)

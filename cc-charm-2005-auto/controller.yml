@@ -1,53 +1,53 @@
 myjujucontroller:
   details:
-    uuid: ce8072b8-ed33-4c83-8f5e-9828cb70fab2
-    controller-uuid: ce8072b8-ed33-4c83-8f5e-9828cb70fab2
-    api-endpoints: ['192.168.30.95:17070']
+    uuid: 953ad4f1-9e10-4868-8ac4-e41819fb0d2b
+    controller-uuid: 953ad4f1-9e10-4868-8ac4-e41819fb0d2b
+    api-endpoints: ['192.168.30.145:17070']
     cloud: mymaas
     region: default
     agent-version: 2.8.1
     agent-git-commit: 16439b3d1c528b7a0e019a16c2122ccfcf6aa41f
     controller-model-version: 2.8.1
     mongo-version: 3.6.3
-    ca-fingerprint: 73:1E:E5:96:C5:59:B2:08:A4:AC:53:2E:2A:C6:B3:CA:43:61:6E:45:ED:66:D0:82:0E:BA:3B:D6:A9:86:8B:E8
+    ca-fingerprint: 17:3F:22:83:48:3A:36:46:F5:C3:F5:F9:F0:27:82:CE:DB:4E:30:1F:CB:2C:C8:8F:E0:4A:AB:99:8E:E4:75:E7
     ca-cert: |
       -----BEGIN CERTIFICATE-----
-      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
+      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
-      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
-      BcQV1ZeJaKo=
+      CwUAA4IBgQA8jsaSFowVGqRSZkqYNl4G+corPzUeFekq2mUw75Hwo1W9hZTgFlCy
+      E8hrHZGUNITYnxQSANJkblLcPTI0NKpez83NtgPSKsYTPrXF/6kM5jTwIlhS1ujg
+      3987tG8HAc5pIBiS0urGY3DA8NS4X1ItGozYfOCUNPilROroR6X/Ue1dTdA0o6C8
+      Bn2nHwLDeg6ucE/Cid4jNr4gOspajIq1alxC1wP3+BmiR+aFDwNpJta20HhaxfFh
+      2iOM34DDe8mRZzWQE1zQJKjxms4NyACDmZcW9aRT8USHaQBY4DPlL8XyKnxNZUqF
+      i4KBv18E8ZDwP6NQZW4q1iqAb1+OhmeA6JojdUSIVTOnpiwPyjiBkG1aYwzhAGAQ
+      Z8idXtrdY4aHBVWFS1lcFrgZt9Sf91ISlRxxUPdGFsLcQCSw+Ru4Ftx3AMROZPWc
+      RGbuAAzFEIgimFlB0CsKC2KP8ZMouKexXrkppDRL+Xr0KgX0mApE+zr1Z5SzqyCU
+      14jIRKdJT5o=
       -----END CERTIFICATE-----
   controller-machines:
     "0":
       instance-id: khryxr
   models:
     controller:
-      uuid: 6d0d0634-7bd1-4e8b-816c-a7df62e016de
-      model-uuid: 6d0d0634-7bd1-4e8b-816c-a7df62e016de
+      uuid: 0a666ae9-1943-4bad-8b31-d02604dc3789
+      model-uuid: 0a666ae9-1943-4bad-8b31-d02604dc3789
       machine-count: 1
       core-count: 4
     default:
-      uuid: 0182a655-1e83-4f87-8332-e0b82afebd23
-      model-uuid: 0182a655-1e83-4f87-8332-e0b82afebd23
-      machine-count: 13
+      uuid: 8153f218-42f5-4aaf-87fd-dac2f7983145
+      model-uuid: 8153f218-42f5-4aaf-87fd-dac2f7983145
+      machine-count: 14
       core-count: 160
   current-model: admin/default
   account:
