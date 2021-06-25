@@ -18,3 +18,5 @@ juju show-action-output 1 | grep result
 # juju remove-application contrail-command --force
 # To access g20 in localhost, had to delete
 sudo ip route delete default
+
+juju show-controller --format json | jq -r '.["myjujucontroller"].details["ca-cert"]' | base64 > cert.pem.b64
