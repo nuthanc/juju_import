@@ -23,6 +23,9 @@ juju show-action-output 4 | grep result
 
 # juju remove-application contrail-command --force
 # To access g20 in localhost, had to delete
+
+ssh -L 8079:192.168.7.17:8079 root@10.204.216.194
+# when the above doesn't work, try clientspecified
 sudo ip route delete default
 
 juju show-controller --format json | jq -r '.[\"myjujucontroller\"].details[\"ca-cert\"]'
