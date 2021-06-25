@@ -1,54 +1,54 @@
 myjujucontroller:
   details:
-    uuid: 953ad4f1-9e10-4868-8ac4-e41819fb0d2b
-    controller-uuid: 953ad4f1-9e10-4868-8ac4-e41819fb0d2b
-    api-endpoints: ['192.168.30.145:17070']
+    uuid: 1e81be7d-f1f7-4369-8a9f-3f8ebb10f779
+    controller-uuid: 1e81be7d-f1f7-4369-8a9f-3f8ebb10f779
+    api-endpoints: ['192.168.7.30:17070']
     cloud: mymaas
     region: default
-    agent-version: 2.8.1
-    agent-git-commit: 16439b3d1c528b7a0e019a16c2122ccfcf6aa41f
-    controller-model-version: 2.8.1
+    agent-version: 2.8.9
+    agent-git-commit: a48bedf0ae2096d0cf750b7676da9b0a994cff09
+    controller-model-version: 2.8.9
     mongo-version: 3.6.3
-    ca-fingerprint: 17:3F:22:83:48:3A:36:46:F5:C3:F5:F9:F0:27:82:CE:DB:4E:30:1F:CB:2C:C8:8F:E0:4A:AB:99:8E:E4:75:E7
+    ca-fingerprint: A2:44:8A:C8:54:05:15:EB:34:6B:06:E2:32:CC:61:B6:71:91:63:C0:73:B1:64:69:0C:F0:A3:50:4F:0E:C1:0F
     ca-cert: |
       -----BEGIN CERTIFICATE-----
-      MIID9DCCAlygAwIBAgIVAML2ZwD6SlAq5nG/EcvJv7kd8LaZMA0GCSqGSIb3DQEB
-      CwUAMCExDTALBgNVBAoTBEp1anUxEDAOBgNVBAMTB2p1anUtY2EwHhcNMjAwODA2
-      MDYxMTE4WhcNMzAwODA2MDYxNjE4WjAhMQ0wCwYDVQQKEwRKdWp1MRAwDgYDVQQD
-      EwdqdWp1LWNhMIIBojANBgkqhkiG9w0BAQEFAAOCAY8AMIIBigKCAYEA4FT6Alj6
-      UCWuvGyG44oJbEg5+ZnI61W6bz7ZSPCC1U/GJloRlRVprIORkZ9jf12Uma56cg4C
-      UWfsZNk7kpYh/jnmZ7MUp+RNqajEU44LS1xdYc/witwmQ8APNoWAUAWTBiE23WSv
-      2DhgYbvW4IaxLlMqgUCfLa7ab20pzXPtEynirdNfywcoTRBh1+GRUcgpFZjjo753
-      55qQ3mb87m0lP1yyzNdrm4DnlK0/asiiDGxy/JId8B72FKW0QNKImJwIFMgYFuMx
-      uWf/anUng7kzMWhyicrEQ/I7N349zMeT5C8nxrqZFfnwCGQ1kbmAHbFSEND+vFgn
-      26n5VEv55StejIJTmTEPsjWiBRILs30QgYl5GZlbztEqUbjm3mp45xqzhMfTyxgm
-      7X3Z6hl8Av7WgeJv6mdxdNkdU/i8DKhmVziv+ioUMyRisThGKHc+ZGXzI48ZZ2vN
-      2LAylc3j28zOXWO6hmd5eYqiARMxuG7g0rFuQWF679dDYDvdMJKvYQ7PAgMBAAGj
-      IzAhMA4GA1UdDwEB/wQEAwICpDAPBgNVHRMBAf8EBTADAQH/MA0GCSqGSIb3DQEB
-      CwUAA4IBgQA8jsaSFowVGqRSZkqYNl4G+corPzUeFekq2mUw75Hwo1W9hZTgFlCy
-      E8hrHZGUNITYnxQSANJkblLcPTI0NKpez83NtgPSKsYTPrXF/6kM5jTwIlhS1ujg
-      3987tG8HAc5pIBiS0urGY3DA8NS4X1ItGozYfOCUNPilROroR6X/Ue1dTdA0o6C8
-      Bn2nHwLDeg6ucE/Cid4jNr4gOspajIq1alxC1wP3+BmiR+aFDwNpJta20HhaxfFh
-      2iOM34DDe8mRZzWQE1zQJKjxms4NyACDmZcW9aRT8USHaQBY4DPlL8XyKnxNZUqF
-      i4KBv18E8ZDwP6NQZW4q1iqAb1+OhmeA6JojdUSIVTOnpiwPyjiBkG1aYwzhAGAQ
-      Z8idXtrdY4aHBVWFS1lcFrgZt9Sf91ISlRxxUPdGFsLcQCSw+Ru4Ftx3AMROZPWc
-      RGbuAAzFEIgimFlB0CsKC2KP8ZMouKexXrkppDRL+Xr0KgX0mApE+zr1Z5SzqyCU
-      14jIRKdJT5o=
+      MIID8zCCAlugAwIBAgIUNEkD45iqJc8XKQj7oLiZGX4fWn0wDQYJKoZIhvcNAQEL
+      BQAwITENMAsGA1UEChMESnVqdTEQMA4GA1UEAxMHanVqdS1jYTAeFw0yMTAzMjQw
+      NzUyMThaFw0zMTAzMjQwNzU3MThaMCExDTALBgNVBAoTBEp1anUxEDAOBgNVBAMT
+      B2p1anUtY2EwggGiMA0GCSqGSIb3DQEBAQUAA4IBjwAwggGKAoIBgQDt9m0pN/Gu
+      Mt/gg263euoexsBhGlzovNLVw/KAPVs4oono0ifsVR4pMFA90T216KO/jXidtrfD
+      lZzbbYtP5p7R3uRqQbKLTrQiz8RcXyKqYUgQfp8qr/MU4wer3xAk+QSiqS1NH6Zr
+      XVdzwrxU2x9L8BOOaR+U7vsrg5KTbL4zVWb6hPOdhEW+cSq2PSEgBrF64Cz2/Luh
+      0w9BYtDZrLmJprABvnVIhskuDA8nvRoGO6Ufekh4nngFFlkkc7/sTJ4xrzFmYfpM
+      XMZRDGNSk1YpCnVFxN1uGQ15HEPMWXCPh50roRxDXTc18sg9gS2qBjSwaY33HKOP
+      ZoiOzNDM/QHD5YZRxE+HxdC0KHBznAuJ9MgR8JljZTFZCaDo0nAdin8xTWfAAjRU
+      LmbToIm4KKY8J9nswin4OvQPRxcDsubJ2mbT2PZ+pSTTa7H+KPhoziT9BdSpF0E1
+      OoHle58kGiUiyfdo37FYr/XkrUTHFe72biu5dHiMjRuz7xpFgXP/rukCAwEAAaMj
+      MCEwDgYDVR0PAQH/BAQDAgKkMA8GA1UdEwEB/wQFMAMBAf8wDQYJKoZIhvcNAQEL
+      BQADggGBAN0KuOG16g+YZD8ffjlbOikOM85FH6QBbDzYK+IoUB5LNUS7+qFL0PaN
+      vyWMZQb41r3GSarA8ib1Sykw9bQbacB/ZLq87gx1blDfP+VhwC0YRODfVf2mX+g8
+      LNvf53olMx4ghiiJGO6BAuPRmvEmLUX8HfbmjVA4OWKsprA7MoU6D8ZsfdiBtV1x
+      VKiKbX3n3L/q6eAUO+mSzk43nYM3B2aKTkvmAZjdZxjJKC5NWkkpahRB+HzNFddm
+      W5Z9GfcsnJZaddJvK9j1zWy2HcUQahm7cGYzdY5aAaFgKulHapdmhddQe/PHvP62
+      a6/Ju7s03XhZ6kqK1DWBoZWvP7kv88j+4Ewjr9nK53W7rf7DXmKiQYjqeJ+58Pij
+      pYpfh/fyfUfHDMEkFCyqD4P5MejStOfks/t00Jfigl7fi9GGLtFy8M9mTgGfop0t
+      1u4Zrr6pz7+CNAlblErZP+AoY82iIQy0JSQOKdQLJcK9WEeD+0rGzyD6tZ7XXLDC
+      0H1wWCrjqg==
       -----END CERTIFICATE-----
   controller-machines:
     "0":
-      instance-id: khryxr
+      instance-id: mkde76
   models:
     controller:
-      uuid: 0a666ae9-1943-4bad-8b31-d02604dc3789
-      model-uuid: 0a666ae9-1943-4bad-8b31-d02604dc3789
+      uuid: fa4a0166-968e-4455-8aba-1fa664588b7b
+      model-uuid: fa4a0166-968e-4455-8aba-1fa664588b7b
       machine-count: 1
       core-count: 4
     default:
-      uuid: 8153f218-42f5-4aaf-87fd-dac2f7983145
-      model-uuid: 8153f218-42f5-4aaf-87fd-dac2f7983145
-      machine-count: 14
-      core-count: 160
+      uuid: e789256c-9e1e-4424-8022-90c7fe9a3873
+      model-uuid: e789256c-9e1e-4424-8022-90c7fe9a3873
+      machine-count: 15
+      core-count: 124
   current-model: admin/default
   account:
     user: admin
