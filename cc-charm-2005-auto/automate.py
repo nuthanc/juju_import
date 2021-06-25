@@ -86,13 +86,13 @@ def parse_deploy_unit():
 
 
 def deploy(charm_path='/root/tf-charms/contrail-command', image_tag='2011.31'):
-  image_tag_config = f"image-tag={image_tag}"
-  juju_deploy = subprocess.run(['juju', 'deploy', charm_path, '--constraints', 'tags=contrail-command', '--config', 'docker-registry=bng-artifactory.juniper.net/contrail-nightly', '--config', image_tag_config, '--config', 'docker-registry-insecure=true'], stdout=subprocess.PIPE,stderr=subprocess.STDOUT, universal_newlines=True)
-  print(juju_deploy.stdout)
+  # image_tag_config = f"image-tag={image_tag}"
+  # juju_deploy = subprocess.run(['juju', 'deploy', charm_path, '--constraints', 'tags=contrail-command', '--config', 'docker-registry=bng-artifactory.juniper.net/contrail-nightly', '--config', image_tag_config, '--config', 'docker-registry-insecure=true'], stdout=subprocess.PIPE,stderr=subprocess.STDOUT, universal_newlines=True)
+  # print(juju_deploy.stdout)
   
+  prepare_config_file()
   wait_till_machine_is_deployed()
   add_relation_to_contrail_controller()
-  prepare_config_file()
   print("Sleeping for 90s for the Unit to get Ready")
   time.sleep(90)
   deploy_unit = parse_deploy_unit()
@@ -102,8 +102,10 @@ def deploy(charm_path='/root/tf-charms/contrail-command', image_tag='2011.31'):
 
 
 if __name__ == '__main__':
-  #change_user_password()
-  deploy(image_tag='R2011.L2.311')
+  import pdb;pdb.set_trace()
+  prepare_config_file()
+  # change_user_password()
+  # deploy(image_tag='2011.L2.311')
   # The below 3 for debugging
   # deploy_unit = parse_deploy_unit()
   # id = run_action_config(deploy_unit)
